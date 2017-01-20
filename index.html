@@ -48,7 +48,7 @@
             <script type="text/template">
                 # Haize
 
-                ## Creando una arquitectura Android que se adapte al cambio
+                ## Creando una arquitectura que se adapte al cambio
                 <br />
                 **Zaragoza Enero 2017**
                 <br />
@@ -132,7 +132,9 @@
 
         <section data-markdown>
             <script type="text/template">
-                ## ¿Cómo trabajamos con tantos riesgos y tan poco tiempo?
+                ## ¿Cómo trabajamos
+                ## con tantos riesgos
+                ## y tan poco tiempo?
             </script>
         </section>
 
@@ -140,55 +142,14 @@
             <script type="text/template">
                 ## Gestión de riesgos
 
-                * Clean Architecture
                 * Tests
+                * Clean Architecture
                 * IDD
                 * No reinventar la rueda (Fcejas, Mancuso, Uncle bob...)
                 * Limitar alcance por valor
                 * Elegir librerías adecuadas
             </script>
         </section>
-
-        <section data-markdown>
-            <script type="text/template">
-                ## ¿Por qué TDD?
-            </script>
-        </section>
-
-        <section data-markdown>
-            <script type="text/template">
-                ## Pero en Android es complicado
-            </script>
-        </section>
-
-        <section data-markdown>
-            <script type="text/template">
-                ##  Wrap with **Adapters**
-
-                <img src="images/transmitter_interface.jpg">
-
-                <aside class="notes" data-markdown>
-                    Capítulo 8 Clean Code
-                </aside>
-
-            </script>
-        </section>
-
-        <section data-markdown>
-            <script type="text/template">
-                ####  Don't mock what you don't own
-                <img src="images/mockito-docs.png">
-            </script>
-        </section>
-
-
-        <section data-markdown>
-            <script type="text/template">
-                ####  The Core of our domain
-                <img src="images/android-location.png">
-            </script>
-        </section>
-
 
         <!--<section data-markdown>-->
             <!--<script type="text/template">-->
@@ -239,20 +200,20 @@
 
         <section data-markdown>
             <script type="text/template">
-                ####  A real example
-
-                <img src="img/haizexagonal.png">
-
-            </script>
-        </section>
-
-        <section data-markdown>
-            <script type="text/template">
                 ## Una buena arquitectura:
 
                 * Permite *diferir* las decisiones potencialmente dolorosas
                 * Maximiza el número de *decisiones no tomadas*
                 * Permite cambiar piezas y dar opciones a nuestro cliente
+            </script>
+        </section>
+
+        <section data-markdown>
+            <script type="text/template">
+                ####  A real example
+
+                <img src="images/haizexagonal.png">
+
             </script>
         </section>
 
@@ -269,83 +230,107 @@
 
         <section data-markdown>
             <script type="text/template">
-                ## Librerías que nos dan el *power*
+                ## ¿Por qué TDD?
+            </script>
+        </section>
+
+        <section data-markdown>
+            <script type="text/template">
+                ## Pero en Android es complicado
+            </script>
+        </section>
+
+        <section data-markdown>
+            <script type="text/template">
+                ##  Wrap with **Adapters**
+
+                <img src="images/transmitter_interface.jpg">
+
+                <aside class="notes" data-markdown>
+                    Capítulo 8 Clean Code
+                </aside>
+
+            </script>
+        </section>
+
+        <section data-markdown>
+            <script type="text/template">
+                ####  Don't mock what you don't own
+                <img src="images/mockito-docs.png">
+            </script>
+        </section>
+
+
+        <section data-markdown>
+            <script type="text/template">
+                ####  The Core of our domain
+                <img src="images/android-location.png">
+            </script>
+        </section>
+
+        <section data-markdown>
+            <script type="text/template">
+                ## Librerías que nos dan el **power**
 
                 * AutoValue
                 * RxJava
                 * Retrolambda
                 * AndroidRxBle
-            </script>
-        </section>
-
-        <section data-markdown data-background-image="images/grumpy_cat.jpg">
-        </section>
-
-
-        <section data-markdown>
-            <script type="text/template">
-                ## No me quiero casar con el framework
-                ####El mecanismo de los frameworks para que los extienda es la *inversión de control*
-                ### Mediante callbacks o listeners android me permite que lo extienda
-                ### Hollywood principle:
-                ####Android y sus librerías deciden llamarme a mi código cuando ellos quieren
-                ### Nosotros también podemos hacer lo mismo con nuestro dominio
+                * Realm
             </script>
         </section>
 
         <section data-markdown>
             <script type="text/template">
-                # Ports and Adapters
-                ## Mi dominio define puertos(interfaces) para ser extendido
-                ## Fuera de mi dominio tengo *adapters* que me permiten ser extendido mediante las librerías android
-                ## Mediante callbacks o listeners android me permite que lo llame
-                ## Nosotros también podemos hacer lo mismo con nuestro dominio
+                ## Value Objects
+
+                - Utiliza librerías como [[7] AutoValue](https://github.com/google/auto/tree/master/value)
+
+                - Evita teclear y testear cosas repetitivas
+
+                <img src="images/money.png">
+
             </script>
         </section>
+
+
+        <!--<section data-markdown>-->
+            <!--<script type="text/template">-->
+                <!--## No me quiero casar con el framework-->
+                <!--####El mecanismo de los frameworks para que los extienda es la *inversión de control*-->
+                <!--### Mediante callbacks o listeners android me permite que lo extienda-->
+                <!--### Hollywood principle:-->
+                <!--####Android y sus librerías deciden llamarme a mi código cuando ellos quieren-->
+                <!--### Nosotros también podemos hacer lo mismo con nuestro dominio-->
+            <!--</script>-->
+        <!--</section>-->
+
+        <!--<section data-markdown>-->
+            <!--<script type="text/template">-->
+                <!--# Ports and Adapters-->
+                <!--## Mi dominio define puertos(interfaces) para ser extendido-->
+                <!--## Fuera de mi dominio tengo *adapters* que me permiten ser extendido mediante las librerías android-->
+                <!--## Mediante callbacks o listeners android me permite que lo llame-->
+                <!--## Nosotros también podemos hacer lo mismo con nuestro dominio-->
+            <!--</script>-->
+        <!--</section>-->
+
+        <!--<section data-markdown>-->
+            <!--<script type="text/template">-->
+                <!--# Ejemplos en Haize-->
+                <!--## En mi dominio tengo un servicio para Geocoding (*puerto*)-->
+                <!--## Cada libreria devuelve un tipo de dirección-->
+                <!--## Fuera de mi dominio tengo un *adapter* para cada una de ellas-->
+                <!--## En la construcción de mis acciones elijo la implementación-->
+                <!--## De esta forma puedo sustituir piezas fácilmente-->
+            <!--</script>-->
+        <!--</section>-->
 
         <section data-markdown>
             <script type="text/template">
-                # Ejemplos en Haize
-                ## En mi dominio tengo un servicio para Geocoding (*puerto*)
-                ## Cada libreria devuelve un tipo de dirección
-                ## Fuera de mi dominio tengo un *adapter* para cada una de ellas
-                ## En la construcción de mis acciones elijo la implementación
-                ## De esta forma puedo sustituir piezas fácilmente
+                ## Muchas gracias
+                <img src="images/folks.gif">
             </script>
-        </section>
-
-
-        <section data-markdown>
-            <script type="text/template">
-                ## ¿De qué va este proyecto?
-            </script>
-        </section>
-
-        <section data-markdown>
-            <script type="text/template">
-                ![Propuesta](images/actions.jpg)
-            </script>
-        </section>
-
-        <section data-markdown>
-            <script type="text/template">
-                ## Conclusiones
-
-                * Las actions *no* sustituyen a un servicio de dominio
-                * Es un buen punto de entrada para descubrir el API
-            </script>
-        </section>
-
-        <section data-markdown>
-            <script type="text/template">
-                ## Navegación por la estructura del proyecto
-            </script>
-        </section>
-
-        <section data-markdown data-background-image="images/preguntas.jpg">
-        </section>
-
-        <section data-markdown data-background-image="images/yo_k_se_tio.gif">
         </section>
     </div>
 </div>
